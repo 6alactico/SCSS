@@ -1,0 +1,11 @@
+@import 'spacing';
+@import 'typography';
+@import 'layout';
+
+$primary-color: blue;
+body {
+    background-color: $primary-color;
+}
+h1 {
+    font-size: $fs-xs;
+}
