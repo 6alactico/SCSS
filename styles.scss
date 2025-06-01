@@ -1,3 +1,140 @@
 @import 'spacing';
 @import 'typography';
+@import 'colors';
 @import 'layout';
+
+$br-sm: 0.25rem;
+$br-md: 0.5rem;
+$br-lg: 0.75rem;
+$br-xl: 1rem;
+
+h1 {
+    color: $green900;
+    font-size: $fs-xl;
+    letter-spacing: $sp-3;
+    padding: $sp-6;
+    text-align: center;
+}
+
+main {
+    background-color: $white;
+    border-top-left-radius: $sp-5;
+    border-top-right-radius: $sp-5;
+    padding: $sp-5;
+}
+
+.label-heading {
+    color: $grey500;
+    font-size: $fs-sm;
+}
+
+// INPUT FIELDS
+.input-field {
+    background-color: $grey50;
+    border-radius: $br-sm;
+    color: $green900;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.input-field input, #custom {
+    background-color: transparent;
+    border: none;
+    height: 3rem;
+    padding: 0 $sp-4;
+    text-align: right;
+    width: 100%;
+    color: $green900;
+}
+
+.input-field svg {
+    left: $sp-5;
+    pointer-events: none;
+    position: absolute;
+    top: 30%;
+    transform: translate(-50%);
+}
+
+input::placeholder {
+    color: $grey400;
+}
+
+input:focus {
+    outline: none;
+}
+
+button, input {
+    border-radius: $br-sm;
+    font-family: inherit;
+    font-size: inherit; 
+}
+
+// Buttons
+#grid-selection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $sp-4;
+    padding: $sp-1 $sp-0;
+}
+
+.tip-btn, #custom {
+    height: 3rem;
+    width: 100%;
+}
+
+.tip-btn, #reset-btn {
+    border: none;
+    background-color: $green900;
+    color: $white;
+}
+
+.tip-btn:active, #reset-btn {
+    background-color: $grey200;
+    color: $green900;
+    
+}
+
+#custom {
+    background-color: $grey50;
+    color: $grey500;
+    font-weight: 400;
+}
+
+// Output
+#output-section {
+    padding: $sp-5;
+    background-color: $green900;
+    gap: $sp-4;
+    border-radius: $br-xl;
+}
+
+#output-text {
+    color: $green400;
+    gap: $sp-5;
+    padding: $sp-4 0;
+}
+
+#output-text div {
+    display: flex;
+    justify-content: space-between;
+}
+
+span {
+    font-size: $fs-xs;
+    color: $grey400;
+}
+
+#output-section label {
+    color: $white;
+    font-size: $fs-sm;
+}
+
+#reset-btn {
+    width: 100%;
+    background-color: $green400;
+    color: $green900;
+    text-transform: uppercase;
+    font-size: $fs-md;
+    padding: $sp-2;
+}

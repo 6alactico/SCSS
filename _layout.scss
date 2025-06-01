@@ -5,8 +5,13 @@
 }
 
 body {
-  height: 100vh;
+  background-color: hsl(185, 41%, 84%);
+  font-family: "Space Mono", monospace;
+  font-size: 1.5rem;
   font-weight: normal;
+  height: 100vh;
+  margin: auto;
+  width: 23.438rem;
 }
 
 .flex-container {
@@ -14,7 +19,15 @@ body {
   flex-direction: column;
 }
 
-// Desktop screen
-@media screen and (min-width: 48rem) {
+#calculator {
+  gap: $sp-5;
+}
 
+#input-section {
+  gap: $sp-6;
+  padding: $sp-2;
+}
+
+#bill, #select-tip, #people {
+  gap: $sp-2;
 }
