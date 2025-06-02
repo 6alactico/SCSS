@@ -18,16 +18,3 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-#calculator {
-  gap: $sp-5;
-}
-
-#input-section {
-  gap: $sp-6;
-  padding: $sp-2;
-}
-
-#bill, #select-tip, #people {
-  gap: $sp-2;
-}

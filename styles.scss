@@ -3,10 +3,41 @@
 @import 'colors';
 @import 'layout';
 
+// Border radius
 $br-sm: 0.25rem;
 $br-md: 0.5rem;
 $br-lg: 0.75rem;
 $br-xl: 1rem;
+
+// Extend
+%component-size {
+    height: 3rem;
+    width: 100%;
+}
+
+%component-elements {
+    border-radius: $br-sm;
+    font-family: inherit;
+    font-size: inherit; 
+}
+
+%input-elements {
+    background-color: $grey50;
+    border: none;
+    padding: 0 $sp-4;
+    text-align: right;
+    caret-color: $green400;
+}
+
+// Content
+main {
+    background-color: $white;
+    border-top-left-radius: $sp-5;
+    border-top-right-radius: $sp-5;
+    padding: $sp-5;
+    display: flex;
+    flex-direction: row;
+}
 
 h1 {
     color: $green900;
@@ -16,36 +47,19 @@ h1 {
     text-align: center;
 }
 
-main {
-    background-color: $white;
-    border-top-left-radius: $sp-5;
-    border-top-right-radius: $sp-5;
-    padding: $sp-5;
-}
-
 .label-heading {
     color: $grey500;
     font-size: $fs-sm;
 }
 
+#calculator { gap: $sp-4; }
+#input-container { gap: $sp-5; padding: $sp-2; }
+
 // INPUT FIELDS
 .input-field {
-    background-color: $grey50;
-    border-radius: $br-sm;
-    color: $green900;
     display: inline-block;
     position: relative;
-    width: 100%;
-}
-
-.input-field input, #custom {
-    background-color: transparent;
-    border: none;
-    height: 3rem;
-    padding: 0 $sp-4;
-    text-align: right;
-    width: 100%;
-    color: $green900;
+    width: 100%
 }
 
 .input-field svg {
@@ -56,18 +70,16 @@ main {
     transform: translate(-50%);
 }
 
-input::placeholder {
-    color: $grey400;
+input {
+    @extend %component-elements;
+    @extend %component-size;
+    @extend %input-elements;
 }
 
-input:focus {
-    outline: none;
-}
-
-button, input {
-    border-radius: $br-sm;
-    font-family: inherit;
-    font-size: inherit; 
+input::placeholder { color: $grey400; }
+input:focus { outline: none; border: 0.1rem solid $green400}
+input.invalid {
+    border: 0.1rem solid red;
 }
 
 // Buttons
@@ -78,63 +90,101 @@ button, input {
     padding: $sp-1 $sp-0;
 }
 
-.tip-btn, #custom {
-    height: 3rem;
-    width: 100%;
-}
-
-.tip-btn, #reset-btn {
+.btn {
     border: none;
     background-color: $green900;
     color: $white;
+    @extend %component-elements;
+    @extend %component-size;
 }
 
-.tip-btn:active, #reset-btn {
+.btn:active {
     background-color: $grey200;
     color: $green900;
-    
 }
 
-#custom {
-    background-color: $grey50;
-    color: $grey500;
-    font-weight: 400;
-}
+.reset {
+    background-color: $green400;
+    color: $green900;
+    font-size: $fs-md;
+    padding: $sp-2;
+    text-transform: uppercase;
+    width: 100%;
+}   
 
 // Output
-#output-section {
-    padding: $sp-5;
+#output-container {
     background-color: $green900;
-    gap: $sp-4;
     border-radius: $br-xl;
+    font-size: $fs-xxl;
+    gap: $sp-4;
+    padding: $sp-5;
 }
 
 #output-text {
     color: $green400;
-    gap: $sp-5;
-    padding: $sp-4 0;
+    gap: $sp-4;
+    padding: $sp-3 $sp-0;
 }
 
 #output-text div {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
 span {
-    font-size: $fs-xs;
     color: $grey400;
+    font-size: $fs-xs;
 }
 
-#output-section label {
+#output-container label {
     color: $white;
     font-size: $fs-sm;
 }
 
-#reset-btn {
-    width: 100%;
-    background-color: $green400;
-    color: $green900;
-    text-transform: uppercase;
-    font-size: $fs-md;
-    padding: $sp-2;
+
+@media screen and (min-width: 48rem) {
+  body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+
+  main {
+    border-bottom-left-radius: $sp-4;
+    border-bottom-right-radius: $sp-4;
+    padding: $sp-6 $sp-5;
+    width: 57rem;
+  }
+
+  #calculator {
+    display: flex;
+    flex-direction: row;
+    gap: $sp-6;
+  }
+
+  h1 {
+    margin: 2rem;
+  }
+
+  #input-container {
+    padding: $sp-3;
+    width: 50%;
+  }
+
+  #output-container {
+    width: 50%;
+    padding: $sp-6;
+    justify-content: space-between;
+    font-size: $fs-xxl;
+  }
+
+  #grid-selection {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .btn, input {
+    cursor: pointer;
+  }
 }
