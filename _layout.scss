@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   background-color: hsl(185, 41%, 84%);
   font-family: "Space Mono", monospace;
@@ -12,9 +17,4 @@ body {
   height: 100vh;
   margin: auto;
   width: 23.438rem;
-}
-
-.flex-container {
-  display: flex;
-  flex-direction: column;
 }
