@@ -18,8 +18,8 @@ main {
   padding: $sp-5;
 }
 
-#calculator { gap: $sp-4; }
-#input-container { gap: $sp-5; padding: $sp-2; }
+#calculator { gap: $sp-5; }
+#input-container { gap: $sp-6; padding: $sp-2; }
 
 h1 {
   color: $green900;
@@ -98,7 +98,7 @@ input::-webkit-inner-spin-button {
   @extend %component-elements;
 }
 
-.btn.active, .reset:active { background-color: $grey200; color: $green900; }
+.btn.active, .reset:active { background-color: $green400; color: $green900; }
 
 .reset {
   background-color: $green400;
