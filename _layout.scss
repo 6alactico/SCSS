@@ -1,4 +1,4 @@
-*, *::before, *::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -9,12 +9,6 @@
   flex-direction: column;
 }
 
-body {
-  background-color: hsl(185, 41%, 84%);
-  font-family: "Space Mono", monospace;
-  font-size: 1.5rem;
-  font-weight: normal;
+@mixin body {
   height: 100vh;
-  margin: auto;
-  width: 23.438rem;
 }
