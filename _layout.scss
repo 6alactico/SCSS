@@ -4,11 +4,18 @@
   padding: 0;
 }
 
+@mixin body {
+  height: 100vh;
+  width: 23.438rem;
+}
+
 .flex-container {
   display: flex;
   flex-direction: column;
 }
 
-@mixin body {
-  height: 100vh;
+@mixin desktop-screen {
+  @media screen and (min-width: 48rem) {
+    
+  }
 }
